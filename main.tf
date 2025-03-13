@@ -1,5 +1,5 @@
 resource "aws_iam_user" "lb" {
-  name = "IAMuser2"
+  name = "IAMuser3"
   path = "/system/"
 
   tags = {
@@ -20,7 +20,8 @@ data "aws_iam_policy_document" "lb_ro" {
 }
 
 resource "aws_iam_user_policy" "lb_ro" {
-  name   = "devuser"
+  name   = "TESTUSER"
   user   = aws_iam_user.lb.name
   policy = data.aws_iam_policy_document.lb_ro.json
 }
+
